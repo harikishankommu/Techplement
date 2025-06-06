@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Techplement Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <!-- Header -->
+  <header>
+    <div class="logo">Techplement</div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+</header>
+  
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h1>Learn Anytime, Anywhere</h1>
+    <p>Explore our wide range of courses and boost your skills.</p>
+    <button onclick="scrollToSection('courses')">Explore Courses</button>
+  </section>
+
+  <!-- Courses Section -->
+ <section id="courses" class="courses">
+  <h2>Popular Courses</h2>
+  <div class="course-grid">
+    
+    <div class="course-card">
+      <img src="https://webliquids.com/wp-content/uploads/2025/03/360_F_871603234_fTMmjlUOpt4F9mDudj8wjyzkt0khEtSZ-1.jpg" alt="Web Development" class="course-img" />
+      <h3>Web Development</h3>
+      <p>Build modern and responsive websites.</p>
+      <button onclick="enroll('Web Development', 2500)">Enroll Now - Rs.2500/-</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://pg-p.ctme.caltech.edu/wp-content/uploads/sites/4/2024/09/Is-Data-Science-Hard.jpg" alt="Data Science" class="course-img" />
+      <h3>Data Science</h3>
+      <p>Analyze and visualize data like a pro.</p>
+      <button onclick="enroll('Data Science', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://media.licdn.com/dms/image/v2/D5612AQEz9KSuvhncQA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1704352101828?e=2147483647&v=beta&t=AhAuVx6qViPYYTfzEnK7ANwrvrysKCSLuNLw3qoTaQs" alt="Python Programming" class="course-img" />
+      <h3>Python Programming</h3>
+      <p>Learn Python from scratch to advanced.</p>
+      <button onclick="enroll('Python Programming', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://emeritus.org/in/wp-content/uploads/sites/3/2023/01/What-is-machine-learning-Definition-types.jpg.optimal.jpg" alt="Machine Learning" class="course-img" />
+      <h3>Machine Learning</h3>
+      <p>Master ML algorithms and techniques.</p>
+      <button onclick="enroll('Machine Learning', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://s3-ap-south-1.amazonaws.com/ricedigitals3bucket/AUPortalContent/2021/08/12060931/Untitled-design-88.png" alt="Cloud Computing" class="course-img" />
+      <h3>Cloud Computing</h3>
+      <p>Learn cloud platforms & services.</p>
+      <button onclick="enroll('Cloud Computing', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://www.shutterstock.com/image-vector/lock-icon-cyber-data-protection-600nw-2471541471.jpg" alt="Cybersecurity" class="course-img" />
+      <h3>Cybersecurity</h3>
+      <p>Protect systems & data effectively.</p>
+      <button onclick="enroll('Cybersecurity', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://admin.12grids.com/uploads/blogs/original_cover_images/Webp/Best_Mobile_App_Development_Technologies_12Grids.webp" alt="Mobile App Development" class="course-img" />
+      <h3>Mobile App Development</h3>
+      <p>Create apps for Android & iOS.</p>
+      <button onclick="enroll('Mobile App Development', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://cdn.prod.website-files.com/678a08d17a6b88bae4e2d8ee/67931a046ea5a2c70aa2c4bf_66b0929089fba41bd4d24821_Key-Differences-Between-UX-Designer-vs.-UI-Designer.png" alt="UI/UX Design" class="course-img" />
+      <h3>UI/UX Design</h3>
+      <p>Design stunning user interfaces.</p>
+      <button onclick="enroll('UI/UX Design', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://st.depositphotos.com/57404040/60706/i/450/depositphotos_607063656-stock-photo-devops-devsecops-approach-app-development.jpg" alt="DevOps" class="course-img" />
+      <h3>DevOps</h3>
+      <p>Automate software delivery processes.</p>
+      <button onclick="enroll('DevOps', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvkUFmp5jSF-DhrD5102bzHU7RbidetfqYfA&s" alt="Artificial Intelligence" class="course-img" />
+      <h3>Artificial Intelligence</h3>
+      <p>Explore AI concepts and applications.</p>
+      <button onclick="enroll('Artificial Intelligence', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://learn.mudrex.com/wp-content/uploads/2024/11/FUTURE-OF-BLOCKCHAIN-jpg.webp" alt="Blockchain Technology" class="course-img" />
+      <h3>Blockchain Technology</h3>
+      <p>Understand blockchain & cryptocurrencies.</p>
+      <button onclick="enroll('Blockchain Technology', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+
+    <div class="course-card">
+      <img src="https://cdn.prod.website-files.com/65a790f0493b6806e60d6e21/666ac55c4eef5e4bda5c2a1b_big-data-image.jpg" alt="Big Data Analytics" class="course-img" />
+      <h3>Big Data Analytics</h3>
+      <p>Process and analyze large datasets.</p>
+      <button onclick="enroll('Big Data Analytics', 2500)">Enroll Now - Rs.2500</button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Techplement</h2>
+    <p>Techplement is a platform offering high-quality online courses to help you grow your career.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@techplement.com</p>
+  </section>
+
+  <!-- Enrollment Popup -->
+  <div id="enroll-popup" class="enroll-popup hidden">
+    <div class="popup-content">
+      <h2 id="course-title">Enrolling...</h2>
+      <p id="popup-message"></p>
+
+      <form id="user-form" style="display:none;" onsubmit="submitUserDetails(event)">
+        <input type="text" id="user-name" placeholder="Your Full Name" required />
+        <input type="email" id="user-email" placeholder="Your Email" required />
+        <button type="submit">Submit Details</button>
+      </form>
+
+      <button id="pay-button" onclick="pay()" style="display:none;">Pay</button>
+      <button id="close-button" onclick="closePopup()" style="display:none;">Go Home</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Techplement. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
