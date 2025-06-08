@@ -152,29 +152,3 @@ function closePopup() {
   currentPaymentMode = null;
 }
 
-//login(tentative)
-
-const loginForm = document.getElementById("login-form");
-  const errorMsg = document.getElementById("login-error");
-
-  loginForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const email = document.getElementById("login-email").value.trim();
-    const password = document.getElementById("login-password").value.trim();
-
-    // Check if email ends with @gmial.com (exactly)
-    if (email.toLowerCase().endsWith("@gmail.com")) {
-      // Accept any password
-      alert("Login successful!");
-      errorMsg.style.display = "none";
-      closeLoginPopup();
-    } else {
-      errorMsg.textContent = "Email must end with @gmail.com";
-      errorMsg.style.display = "block";
-    }
-  });
-
-  function closeLoginPopup() {
-    document.getElementById("login-popup").classList.add("hidden");
-  }
