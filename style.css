@@ -1,11 +1,18 @@
-/* Reset & base */
+/* ---------------------------------- */
+/* Base Reset and Default Styles      */
+/* ---------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset margin, padding, and set box-sizing for all elements */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-
+/* Body basic styling */
 body {
   font-family: 'Roboto', sans-serif;
   background: #f4f7fa;
@@ -15,69 +22,194 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
+  background: #f0f0f0;
 }
 
-/* Header */
+/* ---------------------------------- */
+/* Header Section                     */
+/* ---------------------------------- */
+
 header {
- background:  #092137;
-  color: rgb(255, 255, 255);
+  background: #092137;
+  color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  justify-content: space-between;
+  padding: 1rem 2rem;
   box-shadow: 0 2px 8px black;
   position: sticky;
   top: 0;
   z-index: 1000;
-  
 }
 
+/* Left side of header with logo and spacing */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Logo style */
 .logo {
   font-weight: 700;
   font-size: 1.8rem;
   letter-spacing: 1px;
-  cursor: default;
-  color:white;
+  color: white;
 }
 
-nav ul {
-  display: flex;
-  gap: 1.5rem; /* spacing between boxes */
+/* ---------------------------------- */
+/* Sidebar Toggle Checkbox Hidden     */
+/* ---------------------------------- */
+
+#sidebar-toggle {
+  display: none;
+}
+
+/* ---------------------------------- */
+/* Sidebar Styling                    */
+/* ---------------------------------- */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 100%;
+  background-color: #092137;
+  color: rgb(20, 245, 234);
+  padding: 30px 20px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1001;
+}
+
+/* Sidebar visible when checkbox checked */
+#sidebar-toggle:checked ~ .sidebar {
+  transform: translateX(0);
+}
+
+/* Move main content when sidebar opens */
+#sidebar-toggle:checked ~ .main-content {
+  margin-right: 250px;
+}
+
+/* Sidebar heading */
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Sidebar menu list */
+.sidebar ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-nav ul li a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 0px solid;       /* white rectangle border */
-  border-radius: 6px;
-  color: rgb(250, 250, 250);
-  box-shadow: 0 2px 8px black;
+/* Sidebar links */
+.sidebar ul li a {
+  display: block;
+  padding: 15px 25px;
+  color: rgb(248, 249, 248);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  background-color:rgb(39, 72, 255);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: 0.3s;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-  background-color:  #031519;
-  color: #fcfcfc;  /* dark background text color */
-  box-shadow:black;
+/* Hover effect for sidebar links */
+.sidebar ul li a:hover {
+  background: #1a2b4c;
 }
 
+/* Icon spacing inside links */
+.sidebar ul li a i {
+  margin-right: 10px;
+}
 
+/* Close sidebar icon style */
+.close-sidebar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
 
+.close-sidebar:hover {
+  color: #575050;
+}
 
-/* Hero Section */
+/* ---------------------------------- */
+/* Hamburger Menu Icon                */
+/* ---------------------------------- */
+
+.hamburger {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1501;
+  transition: transform 0.3s ease;
+}
+
+/* Hamburger lines */
+.hamburger span {
+  height: 3px;
+  background: rgb(238, 234, 234);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Hover effect on hamburger lines */
+.hamburger:hover span,
+#sidebar-toggle:checked + .hamburger span {
+  background: #655a5a;
+}
+
+/* Animate hamburger to X */
+#sidebar-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#sidebar-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+#sidebar-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ---------------------------------- */
+/* Main Content                       */
+/* ---------------------------------- */
+
+.main-content {
+  padding: 30px;
+  flex-grow: 1;
+  transition: margin 0.3s;
+}
+
+.main-content h1 {
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+/* ---------------------------------- */
+/* Hero Section                       */
+/* ---------------------------------- */
+
 .hero {
   text-align: center;
   padding: 6rem 2rem 4rem;
   background: linear-gradient(135deg, #031519, #0073b8);
-  color: rgb(255, 255, 255);
+  color: white;
   user-select: none;
   box-shadow: 0 2px 8px black;
 }
@@ -91,10 +223,8 @@ nav ul li a:focus {
 
 .hero p {
   font-size: 1.25rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .hero button {
@@ -107,18 +237,19 @@ nav ul li a:focus {
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(10, 116, 218, 0.3);
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+  transition: all 0.3s ease;
 }
 
-.hero button:hover,
-.hero button:focus {
-  background-color: #000000;
-  color: rgb(255, 255, 255);
-  outline: none;
+.hero button:hover {
+  background-color: #000;
+  color: white;
   transform: scale(1.05);
 }
 
-/* Courses Section */
+/* ---------------------------------- */
+/* Courses Section                    */
+/* ---------------------------------- */
+
 .courses {
   padding: 4rem 3rem;
   background: #d4dfe1;
@@ -132,29 +263,35 @@ nav ul li a:focus {
   font-weight: 700;
 }
 
+/* Grid for course cards */
 .course-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
+/* Course card box styling */
 .course-card {
-  background: #f9faff;
+  background: #f2f3f6;
   border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(10, 116, 218, 0.1);
+  box-shadow: black;
   padding: 1.8rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transform transition */
   cursor: default;
 }
 
+
 .course-card:hover,
 .course-card:focus-within {
-  box-shadow: 0 8px 20px rgba(10, 116, 218, 0.2);
+  box-shadow: 0 12px 24px rgba(6, 9, 12, 0.2);
+  transform: translateY(-10px); /* Moves the card slightly up */
 }
 
+
+/* Course card text */
 .course-card h3 {
   font-size: 1.4rem;
   margin-bottom: 0.75rem;
@@ -168,19 +305,27 @@ nav ul li a:focus {
   margin-bottom: 1.2rem;
 }
 
+/* Course card button */
 .course-card button {
   background-color: #0a74da;
   border: none;
   color: rgb(255, 255, 255);
+  box-shadow:balck;
   padding: 0.6rem 1.5rem;
   font-weight: 600;
   border-radius: 25px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease ;
-
+  transition: background-color 0.3s ease;
 }
 
+.course-card button:hover,
+.course-card button:focus {
+  background-color: black;
+  outline: none;
+}
+
+/* Course card image */
 .course-img {
   width: 100%;
   height: 180px;
@@ -189,14 +334,10 @@ nav ul li a:focus {
   margin-bottom: 1rem;
 }
 
+/* ---------------------------------- */
+/* About Section                      */
+/* ---------------------------------- */
 
-.course-card button:hover,
-.course-card button:focus {
-  background-color: black;
-  outline: none;
-}
-
-/* About Section */
 .about {
   background: #e9f0ff;
   padding: 3rem 3rem 3rem;
@@ -219,7 +360,10 @@ nav ul li a:focus {
   line-height: 1.7;
 }
 
-/* Contact Section */
+/* ---------------------------------- */
+/* Contact Section                    */
+/* ---------------------------------- */
+
 .contact {
   background: #092137;
   color: white;
@@ -238,14 +382,22 @@ nav ul li a:focus {
   font-size: 1.1rem;
 }
 
-/* Enrollment Popup */
-.enroll-popup {
+.hidden {
+  display: none;
+}
+
+/* ---------------------------------- */
+/* Unified Popup Styles (for both enroll & login) */
+/* ---------------------------------- */
+
+/* Overlay (Background) */
+.popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(14, 21, 27, 0.8);
+  background: rgba(14, 22, 27, 0.8); /* can override with class if needed */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,55 +405,83 @@ nav ul li a:focus {
   transition: opacity 0.3s ease;
 }
 
-.enroll-popup.hidden {
-  pointer-events: none;
+/* Hidden popup */
+.popup-overlay.hidden {
   opacity: 0;
+  pointer-events: none;
 }
 
-.popup-content {
-  background: white;
+/* Inner popup box */
+.popup-box {
+  background: #ffffff; /* Change this if needed */
   border-radius: 15px;
   padding: 2.5rem 3rem;
   max-width: 400px;
   width: 90%;
-  box-shadow: 0 10px 30px black;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.popup-content h2 {
-  color: #030506;
-  margin-bottom: 1rem;
+/* Title and text */
+.popup-box h2 {
+  font-size: 1.5rem;
+  color: #0a0a0a;
+  margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
-.popup-content p {
-  color: #333;
-  margin-bottom: 2rem;
+.popup-box p {
   font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
 }
 
-.popup-content form input[type="text"],
-.popup-content form input[type="email"] {
+/* Form inputs */
+.popup-box input[type="text"],
+.popup-box input[type="email"],
+.popup-box input[type="password"],
+.popup-box select {
   width: 100%;
   padding: 0.6rem 0.8rem;
   margin-bottom: 1rem;
   border: 1.8px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  background-color: #fdfdfd;
+  color: #111;
   transition: border-color 0.3s ease;
 }
 
-.popup-content form input[type="text"]:focus,
-.popup-content form input[type="email"]:focus {
+.popup-box input:focus,
+.popup-box select:focus {
   outline: none;
   border-color: #0a74da;
-  box-shadow: 0 0 5px #0a74da;
+  box-shadow: 0 0 6px rgba(10, 116, 218, 0.6);
 }
 
-.popup-content form button,
-.popup-content #pay-button,
-.popup-content #close-button {
+/* Radio labels */
+.popup-box label {
+  display: block;
+  text-align: left;
+  margin: 0.4rem 0;
+  color: #222;
+  font-size: 0.95rem;
+}
+
+.popup-box input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+/* Buttons */
+.popup-box button,
+#pay-button,
+#close-button,
+#close-login-btn {
   background-color: #0a74da;
   color: white;
   border: none;
@@ -314,17 +494,30 @@ nav ul li a:focus {
   transition: background-color 0.3s ease;
 }
 
-.popup-content form button:hover,
-.popup-content #pay-button:hover,
-.popup-content #close-button:hover,
-.popup-content form button:focus,
-.popup-content #pay-button:focus,
-.popup-content #close-button:focus {
-  background-color: #050709;
+.popup-box button:hover,
+.popup-box button:focus,
+#pay-button:hover,
+#close-button:hover,
+#close-login-btn:hover {
+  background-color: #06090c;
   outline: none;
 }
 
-/* Footer */
+/* Hide specific sections */
+.popup-box form.hidden,
+#credit-card-fields.hidden,
+#upi-fields.hidden,
+#net-banking-fields.hidden,
+#pay-button.hidden,
+#close-button.hidden {
+  display: none;
+}
+
+
+/* ---------------------------------- */
+/* Footer                             */
+/* ---------------------------------- */
+
 footer {
   background-color: #0a74da;
   color: white;
@@ -335,13 +528,18 @@ footer {
   user-select: none;
 }
 
-/* Responsive - Mobile */
+/* ---------------------------------- */
+/* Responsive Media Query             */
+/* ---------------------------------- */
+
 @media (max-width: 768px) {
+  /* Stack header items vertically */
   header {
     flex-direction: column;
     padding: 1rem 2rem;
   }
 
+  /* Vertical nav links */
   nav ul {
     flex-direction: column;
     gap: 1rem;
@@ -365,7 +563,29 @@ footer {
     padding: 3rem 2rem 4rem;
   }
 
-  .about, .contact {
+  .about,
+  .contact {
     padding: 2rem 2rem 4rem;
   }
 }
+
+
+
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 2px solid #ccc;
+  padding: 20px;
+  z-index: 1000;
+  max-width: 90%;
+  width: 400px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
