@@ -71,7 +71,7 @@ User
 ---
 
 ## 📂 Project Structure
-
+```
 techplement-courses/
 │
 ├── index.html # Main HTML file
@@ -80,7 +80,7 @@ techplement-courses/
 ├── assets/
 │ └── courses/ # Course images
 └── README.md # Documentation
-
+```
 yaml
 Copy code
 
@@ -91,6 +91,7 @@ Copy code
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/techplement-courses.git
+   ```
 Open the project folder
 
 Open index.html in a browser
