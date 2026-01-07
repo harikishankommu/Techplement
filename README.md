@@ -88,7 +88,8 @@ techplement-courses/
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/techplement-courses.git
+git clone https://github.com/harikishankommu/techplement-courses.git
+
 ```
 
 2. Open the project folder  
